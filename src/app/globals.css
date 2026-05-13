@@ -102,10 +102,14 @@ nav .wrap {
 .nav-logo:hover { opacity: 0.65; }
 .nav-logo svg   { display: block; }
 .nav-email {
-  font-size: 11px; letter-spacing: 0.04em; color: var(--t2);
-  text-decoration: none; transition: color .2s;
+  display: flex; align-items: center; gap: 6px;
+  color: var(--t2); text-decoration: none; transition: color .2s;
 }
 .nav-email:hover { color: var(--text); }
+.nav-email-blip {
+  display: inline-block; width: 5px; height: 5px;
+  border-radius: 50%; background: #4ade80; flex-shrink: 0;
+}
 
 /* ── HERO ───────────────────────────────────── */
 .hero { padding: 136px 0 80px; }
