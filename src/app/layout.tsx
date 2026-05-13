@@ -26,7 +26,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="tr" className={`${sora.variable} ${figtree.variable}`}>
+    <html lang="en" className={`${sora.variable} ${figtree.variable}`}>
       <body>
         <Cursor />
         {children}
