@@ -26,8 +26,12 @@ export default function Home() {
               />
             </svg>
           </a>
-          <a href="mailto:iambarissev@gmail.com" className="nav-email">
-            iambarissev@gmail.com
+          <a href="mailto:iambarissev@gmail.com" className="nav-email" aria-label="Mail">
+            <span className="nav-email-blip" />
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+              <rect x="2" y="4" width="20" height="16" rx="2" />
+              <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7" />
+            </svg>
           </a>
         </div>
       </nav>
