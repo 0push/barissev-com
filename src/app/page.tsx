@@ -1,3 +1,7 @@
+import MusicChip from "./components/MusicChip";
+import LocationChip from "./components/LocationChip";
+import WorkChip from "./components/WorkChip";
+
 export default function Home() {
   return (
     <>
@@ -50,41 +54,9 @@ export default function Home() {
           </p>
 
           <div className="chips">
-            {/* Music */}
-            <div className="chip chip-music">
-              <div className="chip-art">
-                <div className="bars">
-                  <div className="bar" />
-                  <div className="bar" />
-                  <div className="bar" />
-                  <div className="bar" />
-                </div>
-              </div>
-              <div className="chip-txt">
-                <span className="chip-ey">Listening to</span>
-                <span className="chip-val">Tycho — Epoch</span>
-              </div>
-            </div>
-
-            {/* Location */}
-            <div className="chip chip-loc">
-              <span className="chip-loc-dot" />
-              <span>Istanbul, TR</span>
-            </div>
-
-            {/* View work */}
-            <a href="#projects" className="chip chip-work">
-              <span>View work</span>
-              <svg width="11" height="11" viewBox="0 0 14 14" fill="none" aria-hidden="true">
-                <path
-                  d="M2 7h10M7 2l5 5-5 5"
-                  stroke="currentColor"
-                  strokeWidth="1.6"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                />
-              </svg>
-            </a>
+            <MusicChip />
+            <LocationChip />
+            <WorkChip />
           </div>
         </div>
       </section>
