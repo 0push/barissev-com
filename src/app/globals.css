@@ -496,6 +496,18 @@ body.dark .proj::before { background: oklch(96% 0.005 248 / 0.04); }
 #tweaks-btn:hover { color: var(--text); border-color: var(--t3); }
 #tweaks-btn.hidden { display: none; }
 
+/* ── DESKTOP WIDGET SCALE ───────────────────── */
+@media (min-width: 681px) {
+  .music-free .vinyl-scene { width: 190px; }
+  .vinyl-scene              { height: 120px; }
+  .vinyl-left               { width: 90px; height: 90px; }
+  .vinyl-center             { width: 108px; height: 108px; }
+  .vinyl-label              { width: 34px; height: 34px; }
+  .vinyl-right              { width: 90px; height: 90px; }
+  .loc-globe-svg            { width: 90px; height: 90px; }
+  .chip-connector           { width: 44px; }
+}
+
 /* ── RESPONSIVE ─────────────────────────────── */
 @media (max-width: 680px) {
   .g-vl, .g-vr, .g-corner { display: none; }
