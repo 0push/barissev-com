@@ -160,7 +160,7 @@ nav .wrap {
 
 /* ── WIDGETS ────────────────────────────────── */
 .chips {
-  display: flex; align-items: flex-start; gap: 10px; flex-wrap: wrap;
+  display: flex; align-items: center; gap: 24px; flex-wrap: wrap;
   opacity: 0; transform: translateY(14px);
   animation: fadeUp .75s .48s var(--ease-out-expo) forwards;
 }
@@ -196,88 +196,102 @@ nav .wrap {
 .widget-music {
   flex-direction: column;
   padding: 0;
-  overflow: hidden;
-  width: 112px; height: 112px;
+  overflow: visible;
+  width: 152px;
   gap: 0;
+  background: var(--card);
 }
 
-.music-art {
-  flex: 1;
+.vinyl-scene {
+  position: relative;
+  height: 96px;
   width: 100%;
-  background:
-    linear-gradient(160deg,
-      oklch(52% 0.04 210) 0%,
-      oklch(44% 0.03 220) 45%,
-      oklch(36% 0.025 230) 100%
-    );
   display: flex;
   align-items: center;
   justify-content: center;
-  position: relative;
-  overflow: hidden;
-}
-.music-art::before {
-  content: '';
-  position: absolute; inset: 0;
-  background: radial-gradient(ellipse at 25% 25%, oklch(100% 0 0 / 0.07) 0%, transparent 60%);
+  overflow: visible;
 }
 
-.music-eq {
-  display: flex;
-  align-items: flex-end;
-  gap: 3.5px;
-  height: 28px;
-  position: relative;
+.vinyl-disc {
+  position: absolute;
+  border-radius: 50%;
+  background: radial-gradient(circle,
+    oklch(18% 0 0) 0%,   oklch(18% 0 0) 3.5%,
+    oklch(58% 0.09 48)  3.5%, oklch(64% 0.11 46)  6%,
+    oklch(55% 0.10 44)  6%,   oklch(60% 0.10 46) 10%,
+    oklch(62% 0.10 46) 10%,   oklch(58% 0.09 48) 30%,
+    oklch(52% 0.08 44) 30%,   oklch(52% 0.08 44) 32%,
+    oklch(10% 0.002 240) 32%, oklch(10% 0.002 240) 33%,
+    oklch(16% 0.002 240) 33%, oklch(9%  0.002 240) 37%,
+    oklch(16% 0.002 240) 40%, oklch(9%  0.002 240) 44%,
+    oklch(16% 0.002 240) 47%, oklch(9%  0.002 240) 51%,
+    oklch(16% 0.002 240) 54%, oklch(9%  0.002 240) 58%,
+    oklch(16% 0.002 240) 61%, oklch(9%  0.002 240) 65%,
+    oklch(16% 0.002 240) 68%, oklch(9%  0.002 240) 72%,
+    oklch(16% 0.002 240) 75%, oklch(9%  0.002 240) 79%,
+    oklch(16% 0.002 240) 82%, oklch(9%  0.002 240) 86%,
+    oklch(16% 0.002 240) 89%, oklch(9%  0.002 240) 93%,
+    oklch(13% 0.002 240) 96%, oklch(9%  0.002 240) 100%
+  );
+}
+
+.vinyl-left {
+  width: 72px; height: 72px;
+  left: 6px;
   z-index: 1;
-}
-.music-eq-bar {
-  width: 3px;
-  border-radius: 2px;
-  background: oklch(100% 0 0 / 0.7);
-  animation: waveBar 1.3s ease-in-out infinite alternate;
-  transform-origin: bottom;
-}
-.music-eq-bar:nth-child(1) { height: 10px; animation-delay: 0s; }
-.music-eq-bar:nth-child(2) { height: 22px; animation-delay: 0.15s; }
-.music-eq-bar:nth-child(3) { height: 14px; animation-delay: 0.3s; }
-.music-eq-bar:nth-child(4) { height: 26px; animation-delay: 0.08s; }
-.music-eq-bar:nth-child(5) { height: 18px; animation-delay: 0.22s; }
-.music-eq-bar:nth-child(6) { height: 11px; animation-delay: 0.38s; }
-
-@keyframes waveBar {
-  from { transform: scaleY(0.25); opacity: 0.5; }
-  to   { transform: scaleY(1.0);  opacity: 1; }
+  transform: rotate(-14deg) translateY(4px);
+  opacity: 0.6;
+  box-shadow: 2px 4px 14px oklch(0% 0 0 / 0.3);
 }
 
-.music-footer {
-  padding: 9px 11px 10px;
-  background: var(--card);
-  transition: background .4s;
+.vinyl-center {
+  width: 86px; height: 86px;
+  left: 50%; transform: translateX(-50%);
+  z-index: 2;
+  animation: vinylSpin 3.2s linear infinite;
+  box-shadow: 0 6px 24px oklch(0% 0 0 / 0.4);
+}
+
+.vinyl-right {
+  width: 72px; height: 72px;
+  right: 6px;
+  z-index: 1;
+  transform: rotate(14deg) translateY(4px);
+  opacity: 0.6;
+  box-shadow: -2px 4px 14px oklch(0% 0 0 / 0.3);
+}
+
+@keyframes vinylSpin {
+  from { transform: translateX(-50%) rotate(0deg); }
+  to   { transform: translateX(-50%) rotate(360deg); }
+}
+
+.music-info {
+  padding: 10px 12px 11px;
+  border-top: 1px solid var(--line);
+  transition: border-color .4s;
 }
 .music-track {
   display: block;
   font-size: 11px; font-weight: 400;
-  color: var(--text); white-space: nowrap; line-height: 1;
+  color: var(--text); line-height: 1;
   letter-spacing: -0.01em;
 }
 
-/* ── LOCATION WIDGET ────────────────────────── */
-.widget-loc {
+/* ── LOCATION FREE (no card) ────────────────── */
+.loc-free {
+  display: flex;
   flex-direction: column;
-  padding: 0;
-  overflow: hidden;
-  width: 112px; height: 112px;
-  gap: 0;
-  align-items: stretch;
+  align-items: center;
+  gap: 8px;
+  color: var(--text);
 }
 
 .loc-globe-wrap {
-  flex: 1;
+  position: relative;
   display: flex;
   align-items: center;
   justify-content: center;
-  position: relative;
-  color: var(--t2);
 }
 
 .loc-globe-svg {
@@ -293,7 +307,6 @@ nav .wrap {
   background: oklch(62% 0.13 145);
   top: calc(50% - 11px);
   left: calc(50% + 12px);
-  box-shadow: 0 0 0 1px var(--card);
 }
 .loc-pulse-ring {
   position: absolute; inset: -5px;
@@ -303,19 +316,15 @@ nav .wrap {
   animation: locPulse 2.4s var(--ease-out-expo) infinite;
 }
 @keyframes locPulse {
-  0%   { transform: scale(1);   opacity: 0.55; }
+  0%   { transform: scale(1);   opacity: 0.5; }
   100% { transform: scale(3.2); opacity: 0; }
 }
 
-.loc-footer {
-  padding: 9px 11px 10px;
-  background: var(--card);
-  transition: background .4s;
-}
+.loc-info { text-align: center; }
 .loc-city {
   display: block;
   font-size: 11px; font-weight: 400;
-  color: var(--text); white-space: nowrap; line-height: 1;
+  color: var(--text); line-height: 1;
   letter-spacing: -0.01em;
 }
 
