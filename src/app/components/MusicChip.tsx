@@ -1,20 +1,19 @@
 export default function MusicChip() {
   return (
     <div className="widget widget-music">
-      <div className="widget-vinyl-stack">
-        <div className="widget-vinyl" />
-        <div className="widget-album">
-          <div className="widget-eq">
-            <div className="widget-eq-bar" />
-            <div className="widget-eq-bar" />
-            <div className="widget-eq-bar" />
-            <div className="widget-eq-bar" />
-          </div>
+      <div className="music-art">
+        <div className="music-eq">
+          <div className="music-eq-bar" />
+          <div className="music-eq-bar" />
+          <div className="music-eq-bar" />
+          <div className="music-eq-bar" />
+          <div className="music-eq-bar" />
+          <div className="music-eq-bar" />
         </div>
       </div>
-      <div className="widget-music-text">
-        <span className="widget-label">Listening to</span>
-        <span className="widget-track">Tycho — Epoch</span>
+      <div className="music-footer">
+        <span className="widget-label">Now playing</span>
+        <span className="music-track">Tycho — Epoch</span>
       </div>
     </div>
   );

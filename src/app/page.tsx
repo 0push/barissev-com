@@ -1,6 +1,5 @@
 import MusicChip from "./components/MusicChip";
 import LocationChip from "./components/LocationChip";
-import WorkChip from "./components/WorkChip";
 
 export default function Home() {
   return (
@@ -47,17 +46,14 @@ export default function Home() {
             </div>
           </div>
 
-          <h1 className="hero-name">Building<br />digital products.</h1>
-
           <p className="hero-sub">
-            I build <strong>products</strong> at the intersection<br />
+            I build <strong>products</strong> at the intersection
             of human creativity and AI.
           </p>
 
           <div className="chips">
             <MusicChip />
             <LocationChip />
-            <WorkChip />
           </div>
         </div>
       </section>

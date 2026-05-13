@@ -1,60 +1,50 @@
 export default function LocationChip() {
   return (
     <div className="widget widget-loc">
-      <div className="widget-globe-wrap">
-        <svg className="widget-globe-svg" viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <div className="loc-globe-wrap">
+        <svg viewBox="0 0 72 72" fill="none" xmlns="http://www.w3.org/2000/svg" className="loc-globe-svg">
           <defs>
-            <radialGradient id="globe-fw" cx="38%" cy="34%" r="62%">
-              <stop offset="0%" stopColor="oklch(22% 0.014 252)" />
-              <stop offset="55%" stopColor="oklch(11% 0.008 252)" />
-              <stop offset="100%" stopColor="oklch(7% 0.004 252)" />
-            </radialGradient>
-            <clipPath id="globe-clip">
-              <circle cx="22" cy="22" r="20.5" />
+            <clipPath id="wf-clip">
+              <circle cx="36" cy="36" r="33" />
             </clipPath>
           </defs>
 
-          {/* Dark sphere */}
-          <circle cx="22" cy="22" r="20.5" fill="url(#globe-fw)" />
+          {/* Outer ring */}
+          <circle cx="36" cy="36" r="33" stroke="currentColor" strokeWidth="0.8" strokeOpacity="0.28" fill="none" />
 
           {/* Latitude lines */}
-          <g clipPath="url(#globe-clip)" stroke="white" strokeWidth="0.45" opacity="0.13" fill="none">
-            <ellipse cx="22" cy="22" rx="20.5" ry="20.5" />
-            <ellipse cx="22" cy="17" rx="19" ry="5.5" />
-            <ellipse cx="22" cy="27" rx="19" ry="5.5" />
-            <ellipse cx="22" cy="12" rx="14" ry="3" />
-            <ellipse cx="22" cy="32" rx="14" ry="3" />
-            <ellipse cx="22" cy="8"  rx="7"  ry="1.5" />
-            <ellipse cx="22" cy="36" rx="7"  ry="1.5" />
+          <g clipPath="url(#wf-clip)" stroke="currentColor" strokeWidth="0.6" strokeOpacity="0.18" fill="none">
+            <ellipse cx="36" cy="36" rx="33" ry="33" />
+            <ellipse cx="36" cy="28" rx="30" ry="8" />
+            <ellipse cx="36" cy="44" rx="30" ry="8" />
+            <ellipse cx="36" cy="20" rx="21" ry="5" />
+            <ellipse cx="36" cy="52" rx="21" ry="5" />
+            <ellipse cx="36" cy="13" rx="10" ry="2.5" />
+            <ellipse cx="36" cy="59" rx="10" ry="2.5" />
           </g>
 
           {/* Longitude lines */}
-          <g clipPath="url(#globe-clip)" stroke="white" strokeWidth="0.45" opacity="0.10" fill="none">
-            <line x1="22" y1="1.5" x2="22" y2="42.5" />
-            <ellipse cx="22" cy="22" rx="11" ry="20.5" />
-            <ellipse cx="22" cy="22" rx="18" ry="20.5" />
-            <ellipse cx="22" cy="22" rx="6"  ry="20.5" />
+          <g clipPath="url(#wf-clip)" stroke="currentColor" strokeWidth="0.6" strokeOpacity="0.14" fill="none">
+            <line x1="36" y1="3" x2="36" y2="69" />
+            <ellipse cx="36" cy="36" rx="16" ry="33" />
+            <ellipse cx="36" cy="36" rx="28" ry="33" />
           </g>
 
-          {/* Specular highlight */}
-          <ellipse cx="16" cy="15" rx="7" ry="5" fill="white" opacity="0.04" clipPath="url(#globe-clip)" />
-
-          {/* Istanbul marker */}
-          <circle cx="28" cy="17" r="2.5" fill="white" opacity="0.18" clipPath="url(#globe-clip)" />
-          <circle cx="28" cy="17" r="1.5" fill="white" opacity="0.9" clipPath="url(#globe-clip)" />
-
-          {/* Edge ring */}
-          <circle cx="22" cy="22" r="20.5" stroke="white" strokeWidth="0.5" strokeOpacity="0.16" fill="none" />
+          {/* Istanbul pulse rings */}
+          <circle cx="45" cy="27" r="5" stroke="currentColor" strokeWidth="0.5" strokeOpacity="0.12" fill="none" clipPath="url(#wf-clip)" />
+          {/* Istanbul dot */}
+          <circle cx="45" cy="27" r="2.2" fill="currentColor" fillOpacity="0.7" clipPath="url(#wf-clip)" />
+          <circle cx="45" cy="27" r="1.2" fill="currentColor" fillOpacity="0.95" clipPath="url(#wf-clip)" />
         </svg>
 
-        <div className="widget-loc-dot">
-          <div className="widget-loc-pulse" />
+        <div className="loc-pulse-dot">
+          <div className="loc-pulse-ring" />
         </div>
       </div>
 
-      <div className="widget-loc-text">
+      <div className="loc-footer">
         <span className="widget-label">Location</span>
-        <span className="widget-city">Istanbul, TR</span>
+        <span className="loc-city">Istanbul, TR</span>
       </div>
     </div>
   );
