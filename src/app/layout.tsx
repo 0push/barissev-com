@@ -1,20 +1,18 @@
 import type { Metadata } from "next";
-import { Playfair_Display, DM_Sans } from "next/font/google";
+import { Sora, Figtree } from "next/font/google";
 import "./globals.css";
 import Cursor from "./components/Cursor";
-import Tweaks from "./components/Tweaks";
 
-const playfair = Playfair_Display({
+const sora = Sora({
   subsets: ["latin"],
-  variable: "--font-serif",
-  weight: ["400", "700"],
-  style: ["normal", "italic"],
+  variable: "--font-display",
+  weight: ["300", "400", "600", "800"],
 });
 
-const dmSans = DM_Sans({
+const figtree = Figtree({
   subsets: ["latin"],
-  variable: "--font-sans",
-  weight: ["300", "400", "500"],
+  variable: "--font-body",
+  weight: ["300", "400", "500", "600"],
 });
 
 export const metadata: Metadata = {
@@ -28,11 +26,10 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="tr" className={`${playfair.variable} ${dmSans.variable}`}>
+    <html lang="tr" className={`${sora.variable} ${figtree.variable}`}>
       <body>
         <Cursor />
         {children}
-        <Tweaks />
       </body>
     </html>
   );

@@ -36,21 +36,22 @@ export default function Home() {
       {/* Hero */}
       <section className="hero">
         <div className="wrap">
-          <p className="hero-eyebrow">AI-Native Product Builder</p>
-
-          <h1 className="hero-name">
-            Hi,&nbsp;I&apos;m
-            <span className="av-wrap">
+          <div className="hero-identity">
+            <div className="hero-av">
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img src="/uploads/photo.jpg" alt="Barış Şev" />
-            </span>
-            <em>Barış,</em>
-          </h1>
+            </div>
+            <div>
+              <p className="hero-eyebrow">AI-Native Product Builder</p>
+              <span className="hero-id-name">Barış Şev</span>
+            </div>
+          </div>
+
+          <h1 className="hero-name">Building<br />digital products.</h1>
 
           <p className="hero-sub">
-            I build <strong>digital products</strong>
-            <br />
-            the AI-native way.
+            I build <strong>products</strong> at the intersection<br />
+            of human creativity and AI.
           </p>
 
           <div className="chips">
