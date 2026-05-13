@@ -18,7 +18,7 @@ export default function Home() {
       <nav>
         <div className="wrap">
           <a href="#" className="nav-logo" aria-label="Barış Şev">
-            <svg viewBox="0 0 1024 1024" width="30" height="30" aria-hidden="true">
+            <svg viewBox="0 0 1024 1024" width="36" height="36" aria-hidden="true">
               <path
                 fillRule="evenodd"
                 fill="currentColor"
@@ -26,8 +26,8 @@ export default function Home() {
               />
             </svg>
           </a>
-          <a href="mailto:baris@barissev.com" className="nav-email">
-            baris@barissev.com
+          <a href="mailto:iambarissev@gmail.com" className="nav-email">
+            iambarissev@gmail.com
           </a>
         </div>
       </nav>
@@ -47,12 +47,13 @@ export default function Home() {
           </div>
 
           <p className="hero-sub">
-            I build <strong>products</strong> at the intersection
+            Building <strong>products</strong> at the intersection
             of human creativity and AI.
           </p>
 
           <div className="chips">
             <MusicChip />
+            <div className="chip-connector" />
             <LocationChip />
           </div>
         </div>
@@ -114,7 +115,7 @@ export default function Home() {
               <span className="p-num">1</span>
               <span className="p-title">Think in systems</span>
               <p className="p-text">
-                Every product is a network of decisions. I design for the whole, not just the parts.
+                Every product is a network of decisions. Designed for the whole, not just the parts.
               </p>
             </div>
 
@@ -122,7 +123,7 @@ export default function Home() {
               <span className="p-num">2</span>
               <span className="p-title">AI as collaborator</span>
               <p className="p-text">
-                I use AI to compress timelines and expand what&apos;s possible — without letting it think for me.
+                AI compresses timelines and expands what&apos;s possible — without replacing the thinking.
               </p>
             </div>
 
@@ -130,7 +131,7 @@ export default function Home() {
               <span className="p-num">3</span>
               <span className="p-title">Ship, then sharpen</span>
               <p className="p-text">
-                Real feedback beats perfect planning. I bias toward momentum and iterate fast.
+                Real feedback beats perfect planning. Bias toward momentum and iterate fast.
               </p>
             </div>
           </div>
@@ -146,8 +147,8 @@ export default function Home() {
             <br />
             <em>Let&apos;s build together.</em>
           </div>
-          <a href="mailto:baris@barissev.com" className="contact-email">
-            baris@barissev.com
+          <a href="mailto:iambarissev@gmail.com" className="contact-email">
+            iambarissev@gmail.com
           </a>
         </div>
       </section>
