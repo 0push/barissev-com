@@ -6,6 +6,7 @@ import { Globe } from "@/components/ui/globe"
 import { PerspectiveBook } from "@/components/ui/perspective-book"
 import { type COBEOptions } from "cobe"
 import { type ReactNode, useState } from "react"
+import LifeTimeline from "./LifeTimeline"
 
 function Card({ className, children, style }: { className?: string; children: ReactNode; style?: React.CSSProperties }) {
   return (
@@ -115,12 +116,11 @@ export default function AboutBento() {
 
       {/* div1 — bio, 4×2 */}
       <Card style={{ gridColumn: "span 4", gridRow: "span 2" }}
-        className="flex flex-col justify-end p-6">
-        <p style={{ fontFamily: "var(--body)", fontSize: "10px", fontWeight: 500, letterSpacing: "0.12em", textTransform: "uppercase", color: "var(--t3)", marginBottom: 8 }}>
-          Builder
-        </p>
-        <p style={{ fontFamily: "var(--display)", fontSize: "clamp(17px, 2vw, 22px)", fontWeight: 400, letterSpacing: "-0.018em", lineHeight: 1.35, color: "var(--text)" }}>
-          Designing products at the intersection of human creativity and AI — from zero to shipped.
+        className="flex items-center justify-center p-6">
+        <p style={{ fontFamily: "var(--display)", fontSize: "clamp(28px, 3.5vw, 42px)", fontWeight: 300, letterSpacing: "-0.03em", color: "var(--text)", lineHeight: 1.1, textAlign: "center" }}>
+          <span style={{ fontVariantNumeric: "tabular-nums", fontWeight: 500 }}>3.5</span>
+          <span style={{ fontSize: "0.5em", fontWeight: 400, letterSpacing: "0.06em", textTransform: "uppercase", color: "var(--t3)", verticalAlign: "super", marginLeft: 2 }}>+</span>
+          <span style={{ color: "var(--t2)", fontWeight: 300 }}> years of experience</span>
         </p>
       </Card>
 
@@ -282,12 +282,9 @@ export default function AboutBento() {
       {/* div5 — currently reading */}
       <BookCard />
 
-      {/* div6 — quote, 4×2 */}
-      <Card style={{ gridColumn: "span 4", gridRow: "6 / span 2" }}
-        className="flex items-center px-6">
-        <p style={{ fontFamily: "var(--display)", fontSize: "clamp(13px, 1.5vw, 17px)", fontWeight: 300, letterSpacing: "-0.01em", lineHeight: 1.55, color: "var(--t2)", fontStyle: "italic" }}>
-          "The best products aren't built with more features — they're built with better thinking."
-        </p>
+      {/* div6 — life timeline, 4×2 */}
+      <Card style={{ gridColumn: "span 4", gridRow: "6 / span 2" }}>
+        <LifeTimeline />
       </Card>
 
     </div>
