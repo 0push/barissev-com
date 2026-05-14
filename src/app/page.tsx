@@ -1,7 +1,6 @@
 import Link from "next/link";
 import HowIWork from "./components/HowIWork";
 import HeroSub from "./components/HeroSub";
-import MusicChip from "./components/MusicChip";
 import AboutBento from "./components/AboutBento";
 
 export default function Home() {
@@ -113,14 +112,38 @@ export default function Home() {
           <div className="sec-title">Selected work</div>
 
           <div className="proj-grid">
-            {[1,2,3,4,5,6].map((n) => (
-              <div key={n} className="proj-square">
-                <svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true">
-                  <rect x="0.5" y="0.5" width="19" height="19" rx="4.5" stroke="currentColor" strokeDasharray="3 2" opacity="0.3"/>
-                  <path d="M10 6v8M6 10h8" stroke="currentColor" strokeWidth="1.2" strokeLinecap="round" opacity="0.3"/>
-                </svg>
+            <div className="proj-square proj-square--img proj-square--hepitrak">
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img src="/uploads/proj-moodwatch.png" alt="Hepitrak" />
+              <div className="proj-square__info">
+                <p className="proj-square__title">Hepitrak</p>
+                <p className="proj-square__desc">Mood tracking for Apple Watch.</p>
               </div>
-            ))}
+            </div>
+            <div className="proj-square proj-square--img proj-square--fittory">
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img src="/uploads/proj-fitness.png" alt="Fittory" />
+              <div className="proj-square__info">
+                <p className="proj-square__title">Fittory</p>
+                <p className="proj-square__desc">Your personal workout companion.</p>
+              </div>
+            </div>
+            <div className="proj-square proj-square--img proj-square--pawview">
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img src="/uploads/proj-pawview.png" alt="Pawview" />
+              <div className="proj-square__info">
+                <p className="proj-square__title">Pawview</p>
+                <p className="proj-square__desc">Watch your pet from anywhere.</p>
+              </div>
+            </div>
+            <div className="proj-square proj-square--img proj-square--dispo">
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img src="/uploads/dispo-webapp.png" alt="DISPO" />
+              <div className="proj-square__info">
+                <p className="proj-square__title">DISPO</p>
+                <p className="proj-square__desc">Disposable camera app.</p>
+              </div>
+            </div>
           </div>
         </div>
       </section>

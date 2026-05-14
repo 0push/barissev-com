@@ -599,6 +599,54 @@ nav .wrap {
   justify-content: center;
   color: var(--t3);
   transition: border-color .2s;
+  overflow: hidden;
+}
+.proj-square--img {
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: stretch;
+  padding: 0;
+}
+.proj-square--img img {
+  width: 76%;
+  height: auto;
+  object-fit: contain;
+  margin: auto;
+  flex: 1;
+  min-height: 0;
+  filter: drop-shadow(0 12px 28px rgba(0,0,0,0.18)) drop-shadow(0 4px 10px rgba(0,0,0,0.10));
+}
+.proj-square--hepitrak img {
+  width: 78%;
+  align-self: flex-end;
+  margin: auto 0 auto auto;
+  object-position: right center;
+}
+.proj-square--fittory img,
+.proj-square--pawview img {
+  width: 66%;
+}
+.proj-square--dispo img {
+  width: 74%;
+}
+.proj-square__info {
+  padding: 16px 20px 20px;
+  border-top: 1px solid rgba(0,0,0,0.08);
+}
+.proj-square__title {
+  font-family: var(--display);
+  font-size: 17px;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  color: var(--text);
+  margin: 0;
+}
+.proj-square__desc {
+  font-family: var(--body);
+  font-size: 13px;
+  font-weight: 400;
+  color: var(--t2);
+  margin: 4px 0 0;
 }
 
 .proj {
