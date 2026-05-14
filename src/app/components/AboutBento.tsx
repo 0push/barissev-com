@@ -5,7 +5,7 @@ import MusicChip from "./MusicChip"
 import { Globe } from "@/components/ui/globe"
 import { PerspectiveBook } from "@/components/ui/perspective-book"
 import { type COBEOptions } from "cobe"
-import { type ReactNode } from "react"
+import { type ReactNode, useState } from "react"
 
 function Card({ className, children, style }: { className?: string; children: ReactNode; style?: React.CSSProperties }) {
   return (
@@ -60,6 +60,48 @@ const GLOBE_LABELS = [
   { id: "tr", label: "TR" },
   { id: "hu", label: "HU" },
 ]
+
+function BookCard() {
+  const [hovered, setHovered] = useState(false)
+  return (
+    <Card
+      style={{ gridColumn: "3 / span 2", gridRow: "3 / span 3", cursor: "pointer" }}
+      className="flex flex-col items-center justify-center"
+    >
+      <div
+        style={{ position: "absolute", inset: 0 }}
+        onMouseEnter={() => setHovered(true)}
+        onMouseLeave={() => setHovered(false)}
+      />
+      {/* eslint-disable-next-line @next/next/no-img-element */}
+      <img
+        src="/uploads/goodreads.svg"
+        alt="Goodreads"
+        style={{
+          position: "absolute",
+          top: 14,
+          right: 14,
+          width: 20,
+          height: 20,
+          zIndex: 3,
+          pointerEvents: "none",
+          opacity: 0.5,
+        }}
+      />
+      <PerspectiveBook coverSrc="/uploads/sisyphus.jpg" hovering={hovered}>
+        <p style={{ fontFamily: "var(--display)", fontSize: "11px", fontWeight: 600, textAlign: "center", lineHeight: 1.3, color: "#fff" }}>
+          The Myth of Sisyphus
+        </p>
+        <p style={{ fontFamily: "var(--body)", fontSize: "9px", fontWeight: 400, color: "rgba(255,255,255,0.7)", marginTop: 4 }}>
+          Albert Camus
+        </p>
+      </PerspectiveBook>
+      <p style={{ fontFamily: "var(--display)", fontSize: "12px", fontWeight: 500, letterSpacing: "-0.01em", color: "var(--t2)", marginTop: 10 }}>
+        See my shelf ↗
+      </p>
+    </Card>
+  )
+}
 
 export default function AboutBento() {
   return (
@@ -238,17 +280,7 @@ export default function AboutBento() {
       </div>
 
       {/* div5 — currently reading */}
-      <Card style={{ gridColumn: "3 / span 2", gridRow: "3 / span 3" }}
-        className="flex items-center justify-center">
-        <PerspectiveBook coverSrc="/uploads/sisyphus.jpg">
-          <p style={{ fontFamily: "var(--display)", fontSize: "11px", fontWeight: 600, textAlign: "center", lineHeight: 1.3, color: "#fff" }}>
-            The Myth of Sisyphus
-          </p>
-          <p style={{ fontFamily: "var(--body)", fontSize: "9px", fontWeight: 400, color: "rgba(255,255,255,0.7)", marginTop: 4 }}>
-            Albert Camus
-          </p>
-        </PerspectiveBook>
-      </Card>
+      <BookCard />
 
       {/* div6 — quote, 4×2 */}
       <Card style={{ gridColumn: "span 4", gridRow: "6 / span 2" }}

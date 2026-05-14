@@ -111,7 +111,7 @@ export default function Lab() {
 
         <Box label="perspective-book">
           <div style={{ display: "flex", alignItems: "center", justifyContent: "center", height: "100%" }}>
-            <PerspectiveBook coverSrc="/uploads/sisyphus.jpg">
+            <PerspectiveBook coverSrc="/uploads/sisyphus.jpg" hovering>
               <p style={{ fontFamily: "var(--display)", fontSize: "11px", fontWeight: 600, textAlign: "center", lineHeight: 1.3, color: "#fff" }}>
                 The Myth of Sisyphus
               </p>
