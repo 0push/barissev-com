@@ -172,7 +172,6 @@ export function DiaTextReveal({
         WebkitBackgroundClip: "text",
         backgroundSize: "100% 100%",
         backgroundImage,
-        alignmentBaseline: "bottom",
         lineHeight: "100%",
         ...(isMulti && {
           display: "inline-block",
