@@ -1,7 +1,9 @@
 import type { Metadata } from "next";
-import { Sora, Figtree } from "next/font/google";
+import { Sora, Figtree, Geist } from "next/font/google";
 import "./globals.css";
-import Cursor from "./components/Cursor";
+import { cn } from "@/lib/utils";
+
+const geist = Geist({subsets:['latin'],variable:'--font-sans'});
 
 const sora = Sora({
   subsets: ["latin"],
@@ -26,9 +28,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${sora.variable} ${figtree.variable}`}>
+    <html lang="en" className={cn(sora.variable, figtree.variable, "font-sans", geist.variable)}>
       <body>
-        <Cursor />
         {children}
       </body>
     </html>

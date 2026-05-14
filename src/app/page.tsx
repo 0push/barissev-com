@@ -1,5 +1,8 @@
+import Link from "next/link";
+import HowIWork from "./components/HowIWork";
+import HeroSub from "./components/HeroSub";
 import MusicChip from "./components/MusicChip";
-import LocationChip from "./components/LocationChip";
+import AboutBento from "./components/AboutBento";
 
 export default function Home() {
   return (
@@ -40,67 +43,35 @@ export default function Home() {
       <section className="hero">
         <div className="wrap">
           <div className="hero-identity">
-            <div className="hero-av">
-              {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img src="/uploads/photo.jpg" alt="Barış Şev" />
+            <div className="hero-identity-left">
+              <div className="hero-av">
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img src="/uploads/photo.jpg" alt="Barış Şev" />
+              </div>
+              <div style={{ display: "flex", alignItems: "baseline", gap: "10px" }}>
+                <div>
+                  <p className="hero-eyebrow">AI-Native Product Builder</p>
+                  <span className="hero-id-name">Barış Şev</span>
+                </div>
+                <Link href="/about" className="hero-more">
+                  <svg width="28" height="20" viewBox="0 0 28 20" fill="none" aria-hidden="true">
+                    <path d="M2 14 C6 14, 10 6, 18 8" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round" fill="none"/>
+                    <path d="M15 5 L19 8.5 L14.5 11" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round" strokeLinejoin="round" fill="none"/>
+                  </svg>
+                  more?
+                </Link>
+              </div>
             </div>
-            <div>
-              <p className="hero-eyebrow">AI-Native Product Builder</p>
-              <span className="hero-id-name">Barış Şev</span>
-            </div>
+            <span className="hero-location">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+                <path d="M20 10c0 6-8 13-8 13s-8-7-8-13a8 8 0 0 1 16 0Z"/>
+                <circle cx="12" cy="10" r="3"/>
+              </svg>
+              IST, TR
+            </span>
           </div>
 
-          <p className="hero-sub">
-            Building <strong>products</strong> at the intersection
-            of human creativity and AI.
-          </p>
-
-          <div className="chips">
-            <MusicChip />
-            <div className="chip-connector" />
-            <LocationChip />
-          </div>
-        </div>
-      </section>
-
-      {/* Projects */}
-      <section id="projects">
-        <div className="wrap">
-          <div className="sec-rule">
-            <span className="sec-index">01 — Projects</span>
-            <div className="sec-line" />
-          </div>
-
-          <div className="sec-title">Selected work</div>
-
-          <div className="proj-list">
-            <a className="proj" href="#">
-              <span className="proj-n">01</span>
-              <div>
-                <span className="proj-name">Venture OS</span>
-                <span className="proj-tag">AI Productivity Platform · 2025</span>
-              </div>
-              <span className="proj-arr">↗</span>
-            </a>
-
-            <a className="proj" href="#">
-              <span className="proj-n">02</span>
-              <div>
-                <span className="proj-name">Meridian</span>
-                <span className="proj-tag">Data Intelligence Tool · 2024</span>
-              </div>
-              <span className="proj-arr">↗</span>
-            </a>
-
-            <a className="proj" href="#">
-              <span className="proj-n">03</span>
-              <div>
-                <span className="proj-name">Studio Forma</span>
-                <span className="proj-tag">Brand &amp; Digital Product · 2024</span>
-              </div>
-              <span className="proj-arr">↗</span>
-            </a>
-          </div>
+          <HeroSub />
         </div>
       </section>
 
@@ -108,36 +79,48 @@ export default function Home() {
       <section id="process">
         <div className="wrap">
           <div className="sec-rule">
-            <span className="sec-index">02 — Process</span>
+            <span className="sec-index">01 — Process</span>
             <div className="sec-line" />
           </div>
 
           <div className="sec-title">How I work</div>
 
-          <div className="principles">
-            <div>
-              <span className="p-num">1</span>
-              <span className="p-title">Think in systems</span>
-              <p className="p-text">
-                Every product is a network of decisions. Designed for the whole, not just the parts.
-              </p>
-            </div>
+          <HowIWork />
+        </div>
+      </section>
 
-            <div>
-              <span className="p-num">2</span>
-              <span className="p-title">AI as collaborator</span>
-              <p className="p-text">
-                AI compresses timelines and expands what&apos;s possible — without replacing the thinking.
-              </p>
-            </div>
+      {/* About */}
+      <section id="about">
+        <div className="wrap">
+          <div className="sec-rule">
+            <span className="sec-index">02 — About</span>
+            <div className="sec-line" />
+          </div>
 
-            <div>
-              <span className="p-num">3</span>
-              <span className="p-title">Ship, then sharpen</span>
-              <p className="p-text">
-                Real feedback beats perfect planning. Bias toward momentum and iterate fast.
-              </p>
-            </div>
+          <div className="sec-title">About me</div>
+          <AboutBento />
+        </div>
+      </section>
+
+      {/* Projects */}
+      <section id="projects">
+        <div className="wrap">
+          <div className="sec-rule">
+            <span className="sec-index">03 — Projects</span>
+            <div className="sec-line" />
+          </div>
+
+          <div className="sec-title">Selected work</div>
+
+          <div className="proj-grid">
+            {[1,2,3,4,5,6].map((n) => (
+              <div key={n} className="proj-square">
+                <svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true">
+                  <rect x="0.5" y="0.5" width="19" height="19" rx="4.5" stroke="currentColor" strokeDasharray="3 2" opacity="0.3"/>
+                  <path d="M10 6v8M6 10h8" stroke="currentColor" strokeWidth="1.2" strokeLinecap="round" opacity="0.3"/>
+                </svg>
+              </div>
+            ))}
           </div>
         </div>
       </section>
