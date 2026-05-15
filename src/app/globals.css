@@ -928,10 +928,10 @@ body.dark .proj::before { background: oklch(96% 0.005 248 / 0.04); }
   .about-card--media     { grid-column: 1; grid-row: auto; min-height: 200px; }
   .about-card--timeline  { grid-column: 1; grid-row: auto; min-height: 220px; }
 
-  /* Globe — top half visible, clipped at bottom, header on top */
+  /* Globe — show Europe region */
   .about-globe-stage {
     bottom: auto;
-    top: 10%;
+    top: -25%;
     width: 300%;
   }
   .about-location-text { font-size: 13px; }
