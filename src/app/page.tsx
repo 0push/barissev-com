@@ -80,7 +80,7 @@ export default function Home() {
             <div className="sec-line" />
           </div>
 
-          <div className="sec-title">How I work</div>
+          <div className="sec-title sec-title--hideable">How I work</div>
 
           <HowIWork />
         </div>
@@ -94,7 +94,7 @@ export default function Home() {
             <div className="sec-line" />
           </div>
 
-          <div className="sec-title-row">
+          <div className="sec-title-row sec-title--hideable">
             <div className="sec-title">About me</div>
             <div className="about-interact-cue">
               <MousePointerClick size={15} strokeWidth={1.6} aria-hidden="true" />
@@ -113,7 +113,7 @@ export default function Home() {
             <div className="sec-line" />
           </div>
 
-          <div className="sec-title">Selected work</div>
+          <div className="sec-title sec-title--hideable">Selected work</div>
 
           <div className="proj-grid">
             <div className="proj-square proj-square--img proj-square--hepitrak">
