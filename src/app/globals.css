@@ -930,8 +930,8 @@ body.dark .proj::before { background: oklch(96% 0.005 248 / 0.04); }
 
   /* Globe — show Europe region, bottom-clipped */
   .about-globe-stage {
-    bottom: -30%;
-    top: auto;
+    top: -10%;
+    bottom: auto;
     width: 240%;
   }
   .about-location-text { font-size: 13px; }
