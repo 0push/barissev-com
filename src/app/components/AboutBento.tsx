@@ -66,7 +66,7 @@ function BookCard() {
   const [hovered, setHovered] = useState(false)
   return (
     <Card
-      style={{ gridColumn: "3 / span 2", gridRow: "3 / span 3", cursor: "pointer" }}
+      style={{ gridColumn: "3 / span 2", gridRow: "3 / span 3" }}
       className="flex flex-col items-center justify-center"
     >
       <div
@@ -97,9 +97,9 @@ function BookCard() {
           Albert Camus
         </p>
       </PerspectiveBook>
-      <p style={{ fontFamily: "var(--display)", fontSize: "12px", fontWeight: 500, letterSpacing: "-0.01em", color: "var(--t2)", marginTop: 10 }}>
+      <a href="https://goodreads.com/barissev" target="_blank" rel="noopener noreferrer" style={{ fontFamily: "var(--display)", fontSize: "12px", fontWeight: 500, letterSpacing: "-0.01em", color: "var(--t2)", marginTop: 10, textDecoration: "none" }}>
         See my shelf ↗
-      </p>
+      </a>
     </Card>
   )
 }
@@ -241,7 +241,6 @@ export default function AboutBento() {
         border: "1px solid rgba(0,0,0,0.08)",
         display: "grid",
         placeItems: "center",
-        cursor: "pointer",
       }}>
         {/* Apple Music logo — top right */}
         {/* eslint-disable-next-line @next/next/no-img-element */}
@@ -273,9 +272,9 @@ export default function AboutBento() {
         {/* Hover overlay — fills from top-right corner */}
         <div className="music-hover-bg" />
         <div className="music-hover-content">
-          <p style={{ fontFamily: "var(--display)", fontSize: "13px", fontWeight: 500, letterSpacing: "-0.01em", color: "#fff", margin: 0, textAlign: "center", lineHeight: 1.4, padding: "0 20px" }}>
+          <a href="https://music.apple.com/hu/playlist/chew-chew/pl.u-leyl1BRcjLBkJrv" target="_blank" rel="noopener noreferrer" style={{ fontFamily: "var(--display)", fontSize: "13px", fontWeight: 500, letterSpacing: "-0.01em", color: "#fff", margin: 0, textAlign: "center", lineHeight: 1.4, padding: "0 20px", textDecoration: "none" }}>
             My Playlist ↗
-          </p>
+          </a>
         </div>
       </div>
 

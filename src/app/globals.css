@@ -704,13 +704,18 @@ nav .wrap {
 }
 .contact-hl em { font-style: italic; }
 
+.contact-links {
+  display: flex; align-items: center; gap: 12px;
+}
 .contact-email {
-  display: inline-block; font-size: 13.5px; font-weight: 400;
+  font-size: 13.5px; font-weight: 400;
   letter-spacing: 0.04em; color: var(--t2); text-decoration: none;
   border-bottom: 1px solid var(--line); padding-bottom: 3px;
   transition: color .2s, border-color .2s;
 }
 .contact-email:hover { color: var(--text); border-color: var(--text); }
+.contact-linkedin { display: flex; color: var(--t2); transition: color .2s; }
+.contact-linkedin:hover { color: var(--text); }
 
 /* ── FOOTER ─────────────────────────────────── */
 footer { border-top: 1px solid var(--line); padding: 16px 0; transition: border-color .4s; }
@@ -789,6 +794,7 @@ body.dark .proj::before { background: oklch(96% 0.005 248 / 0.04); }
   .principles { grid-template-columns: 1fr; gap: var(--sp-lg); }
   .p-num { font-size: 48px; }
   .proj-grid { grid-template-columns: 1fr; }
+  .proj-square__info { text-align: center; }
   .hero-sub { font-size: 20px; }
   .sec-title { font-size: 28px; }
 }
