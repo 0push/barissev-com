@@ -385,33 +385,20 @@ const STEPS = [
 
 export default function HowIWork() {
   return (
-    <div style={{
-      display: "grid",
-      gridTemplateColumns: "repeat(3, 1fr)",
-      gap: "16px",
-    }}>
-      {STEPS.map(({ title, desc, Scene }) => (
-        <div key={title}>
-          <p style={{
-            fontFamily: "var(--display)",
-            fontSize: "17px",
-            fontWeight: 600,
-            letterSpacing: "-0.01em",
-            color: "oklch(9% 0.012 245)",
-            margin: "0 0 6px",
-          }}>{title}</p>
-          <p style={{
-            fontFamily: "var(--body)",
-            fontSize: "12px",
-            fontWeight: 300,
-            color: "oklch(50% 0.010 245)",
-            lineHeight: 1.55,
-            margin: "0 0 14px",
-          }}>{desc}</p>
-          <Stage duration={8} controls={false} background={BG}>
-            <Scene />
-          </Stage>
-        </div>
+    <div className="hiw-grid">
+      {STEPS.map(({ title, desc, Scene }, i) => (
+        <React.Fragment key={title}>
+          {i > 0 && <div className="hiw-separator" />}
+          <div className="hiw-step">
+            <Stage duration={8} controls={false} background={BG}>
+              <Scene />
+            </Stage>
+            <div className="hiw-text">
+              <p className="hiw-title">{title}</p>
+              <p className="hiw-desc">{desc}</p>
+            </div>
+          </div>
+        </React.Fragment>
       ))}
     </div>
   )
