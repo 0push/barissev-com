@@ -602,6 +602,7 @@ nav .wrap {
   font-weight: 400; letter-spacing: -0.022em;
   margin-bottom: 44px;
 }
+.sec-title--hideable { display: none; }
 .sec-title-row {
   display: flex; align-items: baseline; gap: 12px; margin-bottom: 44px;
 }
