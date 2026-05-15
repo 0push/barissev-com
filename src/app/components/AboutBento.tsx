@@ -29,7 +29,7 @@ const GLOBE_CONFIG: COBEOptions = {
   height: 800,
   devicePixelRatio: 2,
   phi: -1.78,
-  theta: 0.30,
+  theta: 0.20,
   dark: 0,
   diffuse: 1.8,
   mapSamples: 16000,
@@ -53,7 +53,7 @@ const GLOBE_CONFIG: COBEOptions = {
   ],
   arcColor:  [0.55, 0.75, 0.98] as [number, number, number],
   arcWidth:  0.6,
-  arcHeight: 0.7,
+  arcHeight: 0.4,
 }
 
 const GLOBE_LABELS = [
