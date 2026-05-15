@@ -602,8 +602,20 @@ nav .wrap {
   font-weight: 400; letter-spacing: -0.022em;
   margin-bottom: 44px;
 }
-.sec-title--hideable { display: none; }
 .sec-rule { display: none; }
+.sec-title--hideable {
+  padding-top: 48px;
+  position: relative;
+}
+.sec-title--hideable::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, var(--line) 60%, transparent);
+}
 .sec-title-row {
   display: flex; align-items: baseline; gap: 12px; margin-bottom: 44px;
 }
