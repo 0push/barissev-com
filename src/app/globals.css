@@ -932,7 +932,7 @@ body.dark .proj::before { background: oklch(96% 0.005 248 / 0.04); }
   .about-globe-stage {
     top: -10%;
     bottom: auto;
-    width: 240%;
+    width: 210%;
   }
   .about-location-text { font-size: 13px; }
   .about-location-default-header { gap: 10px; }
