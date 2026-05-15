@@ -580,6 +580,63 @@ nav .wrap {
   font-weight: 400; letter-spacing: -0.022em;
   margin-bottom: 44px;
 }
+.sec-title-row {
+  display: flex; align-items: baseline; gap: 12px; margin-bottom: 44px;
+}
+.sec-title-row .sec-title { margin-bottom: 0; }
+.about-interact-cue {
+  display: flex; align-items: center; gap: 5px;
+  font-size: 11px; color: var(--t3); font-weight: 400;
+}
+
+/* ── ABOUT BENTO ───────────────────────────── */
+.about-bento-grid {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  grid-template-rows: repeat(7, 1fr);
+  gap: 12px;
+  height: 520px;
+}
+.about-card--bio       { grid-column: span 4; grid-row: span 2; }
+.about-card--location  { grid-column: 5 / span 2; grid-row: 1 / span 7; }
+.about-card--media     { grid-column: span 4; grid-row: 3 / span 3; display: grid; grid-template-columns: 1fr 1px 1fr; }
+.about-card--timeline  { grid-column: span 4; grid-row: 6 / span 2; }
+
+.about-media-panel {
+  display: flex; flex-direction: column; align-items: center; justify-content: center;
+  position: relative; overflow: hidden;
+}
+.about-media-separator { background: rgba(0,0,0,0.08); }
+.about-media-logo {
+  position: absolute; top: 14px; right: 14px;
+  width: 22px; height: 22px; z-index: 3; pointer-events: none;
+}
+.about-media-logo--goodreads { width: 20px; height: 20px; opacity: 0.5; }
+
+.about-location-default-header {
+  padding: 20px 20px 0; z-index: 2; position: relative;
+  text-align: center; display: flex; flex-direction: column;
+  align-items: center; gap: 22px;
+}
+.about-location-hover-header {
+  position: absolute; top: 0; left: 0; right: 0;
+  padding: 22px 16px 0; z-index: 12;
+  display: flex; flex-direction: column; align-items: center; gap: 8px;
+}
+.about-location-chip {
+  display: flex; align-items: center; gap: 7px;
+}
+.about-location-text {
+  font-family: var(--display); font-size: 16px; font-weight: 400;
+  letter-spacing: -0.02em; color: var(--t2); margin: 0;
+}
+.about-globe-viewport {
+  flex: 1; position: relative; overflow: hidden;
+}
+.about-globe-stage {
+  position: absolute; bottom: -20%; left: 50%;
+  transform: translateX(-50%); width: 210%; aspect-ratio: 1;
+}
 
 /* ── PROJECTS ───────────────────────────────── */
 .proj-list { display: flex; flex-direction: column; }

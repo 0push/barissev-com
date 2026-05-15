@@ -1,4 +1,4 @@
-import Link from "next/link";
+import { MousePointerClick } from "lucide-react";
 import HowIWork from "./components/HowIWork";
 import HeroSub from "./components/HeroSub";
 import AboutBento from "./components/AboutBento";
@@ -52,22 +52,20 @@ export default function Home() {
                   <p className="hero-eyebrow">AI-Native Product Builder</p>
                   <span className="hero-id-name">Barış Şev</span>
                 </div>
-                <Link href="/about" className="hero-more">
+                <a
+                  href="https://www.linkedin.com/in/barissev/"
+                  className="hero-more"
+                  target="_blank"
+                  rel="noreferrer"
+                >
                   <svg width="28" height="20" viewBox="0 0 28 20" fill="none" aria-hidden="true">
                     <path d="M2 14 C6 14, 10 6, 18 8" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round" fill="none"/>
                     <path d="M15 5 L19 8.5 L14.5 11" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round" strokeLinejoin="round" fill="none"/>
                   </svg>
                   more?
-                </Link>
+                </a>
               </div>
             </div>
-            <span className="hero-location">
-              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
-                <path d="M20 10c0 6-8 13-8 13s-8-7-8-13a8 8 0 0 1 16 0Z"/>
-                <circle cx="12" cy="10" r="3"/>
-              </svg>
-              IST, TR
-            </span>
           </div>
 
           <HeroSub />
@@ -78,7 +76,7 @@ export default function Home() {
       <section id="process">
         <div className="wrap">
           <div className="sec-rule">
-            <span className="sec-index">01 — Process</span>
+            <span className="sec-index">Process</span>
             <div className="sec-line" />
           </div>
 
@@ -92,11 +90,17 @@ export default function Home() {
       <section id="about">
         <div className="wrap">
           <div className="sec-rule">
-            <span className="sec-index">02 — About</span>
+            <span className="sec-index">About</span>
             <div className="sec-line" />
           </div>
 
-          <div className="sec-title">About me</div>
+          <div className="sec-title-row">
+            <div className="sec-title">About me</div>
+            <div className="about-interact-cue">
+              <MousePointerClick size={15} strokeWidth={1.6} aria-hidden="true" />
+              <span>interact</span>
+            </div>
+          </div>
           <AboutBento />
         </div>
       </section>
@@ -105,7 +109,7 @@ export default function Home() {
       <section id="projects">
         <div className="wrap">
           <div className="sec-rule">
-            <span className="sec-index">03 — Projects</span>
+            <span className="sec-index">Projects</span>
             <div className="sec-line" />
           </div>
 
@@ -157,9 +161,15 @@ export default function Home() {
             <br />
             <em>Let&apos;s build together.</em>
           </div>
-          <a href="mailto:iambarissev@gmail.com" className="contact-email">
-            iambarissev@gmail.com
-          </a>
+          <div className="contact-links">
+            <a href="mailto:iambarissev@gmail.com" className="contact-email">
+              iambarissev@gmail.com
+            </a>
+            <a href="https://linkedin.com/in/barissev" target="_blank" rel="noopener noreferrer" className="contact-linkedin" aria-label="LinkedIn">
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img src="/uploads/linkedin.svg" alt="LinkedIn" width="18" height="18" />
+            </a>
+          </div>
         </div>
       </section>
 

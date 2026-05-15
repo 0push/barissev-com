@@ -81,6 +81,8 @@ const MOTION_PATH_D = buildMotionPath()
 
 export default function LifeTimeline() {
   const prefersReducedMotion = useReducedMotion()
+  const rootRef = useRef<HTMLDivElement>(null)
+  const [isCompact, setIsCompact] = useState(false)
   const [motionPathLen, setMotionPathLen] = useState(0)
   const [mainPathLen, setMainPathLen] = useState(0)
   const [milestoneOffsets, setMilestoneOffsets] = useState<number[]>([])
@@ -91,6 +93,17 @@ export default function LifeTimeline() {
   const elapsedRef = useRef(0)
   const motionPathRef = useRef<SVGPathElement>(null)
   const mainPathRef = useRef<SVGPathElement>(null)
+
+  useLayoutEffect(() => {
+    const root = rootRef.current
+    if (!root) return
+
+    const observer = new ResizeObserver(([entry]) => {
+      setIsCompact(entry.contentRect.width < 430)
+    })
+    observer.observe(root)
+    return () => observer.disconnect()
+  }, [])
 
   useLayoutEffect(() => {
     const motionPath = motionPathRef.current
@@ -162,10 +175,12 @@ export default function LifeTimeline() {
   const isReturning = distance > lastMilestoneOffset
   const returnProgress = isReturning ? clamp((distance - lastMilestoneOffset) / returnLength, 0, 1) : 0
   const zoomProgress = isReturning ? 1 - smoothstep(returnProgress) : smoothstep(mainProgress)
-  const zoom = prefersReducedMotion ? 1 : 1 + zoomProgress * 0.14
-  const viewW = VIEW_W / zoom
-  const viewH = VIEW_H / zoom
-  const viewX = clamp(point.x - viewW * 0.23, WORLD_MIN_X, WORLD_MAX_X - viewW)
+  const baseViewW = isCompact ? 520 : VIEW_W
+  const baseViewH = isCompact ? 280 : VIEW_H
+  const zoom = prefersReducedMotion ? 1 : 1 + zoomProgress * (isCompact ? 0.08 : 0.14)
+  const viewW = baseViewW / zoom
+  const viewH = baseViewH / zoom
+  const viewX = clamp(point.x - viewW * (isCompact ? 0.35 : 0.23), WORLD_MIN_X, WORLD_MAX_X - viewW)
   const viewY = clamp(point.y - viewH * 0.58, WORLD_MIN_Y, WORLD_MAX_Y - viewH)
   const mainDistance = Math.min(distance, lastMilestoneOffset)
   const dashOffset = mainPathLen > 0 ? mainPathLen - mainDistance : 0
@@ -174,6 +189,7 @@ export default function LifeTimeline() {
 
   return (
     <div
+      ref={rootRef}
       aria-label="Life timeline"
       style={{
         position: "relative",
