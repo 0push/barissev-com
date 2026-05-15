@@ -563,6 +563,26 @@ nav .wrap {
   letter-spacing: -0.01em;
 }
 
+/* ── HOW I WORK ────────────────────────────── */
+.hiw-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+}
+.hiw-step {
+  display: flex; flex-direction: column;
+}
+.hiw-text { margin-top: 18px; }
+.hiw-title {
+  font-family: var(--display); font-size: 17px; font-weight: 600;
+  letter-spacing: -0.01em; color: oklch(9% 0.012 245); margin: 0 0 6px;
+}
+.hiw-desc {
+  font-family: var(--body); font-size: 12px; font-weight: 300;
+  color: oklch(50% 0.010 245); line-height: 1.55; margin: 0;
+}
+.hiw-separator { display: none; }
+
 /* ── SECTION ────────────────────────────────── */
 .sec-rule {
   display: grid; grid-template-columns: auto 1fr; align-items: center; gap: 18px;
@@ -854,6 +874,46 @@ body.dark .proj::before { background: oklch(96% 0.005 248 / 0.04); }
   .proj-square__info { text-align: center; }
   .hero-sub { font-size: 20px; }
   .sec-title { font-size: 28px; }
+
+  /* HowIWork — stack vertically with separators */
+  .hiw-grid {
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
+  .hiw-separator {
+    display: block;
+    height: 1px;
+    margin: 28px 0;
+    background: linear-gradient(90deg, transparent, var(--line) 20%, var(--line) 80%, transparent);
+  }
+  .hiw-text { margin-top: 20px; }
+
+  /* About bento — single column */
+  .about-bento-grid {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+    height: auto;
+    gap: 10px;
+  }
+  .about-card--bio       { grid-column: 1; grid-row: auto; }
+  .about-card--location  { grid-column: 1; grid-row: auto; min-height: 320px; }
+  .about-card--media     { grid-column: 1; grid-row: auto; min-height: 200px; }
+  .about-card--timeline  { grid-column: 1; grid-row: auto; min-height: 220px; }
+
+  /* Globe — show Europe region (upper-center of canvas) */
+  .about-globe-stage {
+    bottom: auto;
+    top: -25%;
+    width: 300%;
+  }
+  .about-location-text { font-size: 14px; }
+
+  /* Music/book — smaller on mobile */
+  .vinyl-scene { width: 100px !important; }
+  .vinyl-left  { width: 52px !important; height: 52px !important; }
+  .vinyl-center { width: 62px !important; height: 62px !important; }
+  .vinyl-label  { width: 20px !important; height: 20px !important; }
+  .vinyl-right  { width: 52px !important; height: 52px !important; }
 }
 
 /* ── RESPONSIVE — tablet landscape ≤1068px ─── */
