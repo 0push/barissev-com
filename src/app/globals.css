@@ -366,7 +366,8 @@ nav .wrap {
   pointer-events: none;
 }
 
-.music-card:hover .music-hover-bg {
+.music-card:hover .music-hover-bg,
+.music-card:active .music-hover-bg {
   clip-path: circle(150% at 0% 100%);
 }
 
@@ -384,7 +385,8 @@ nav .wrap {
   transition: opacity 0.15s ease;
 }
 
-.music-card:hover .music-hover-content {
+.music-card:hover .music-hover-content,
+.music-card:active .music-hover-content {
   opacity: 1;
   pointer-events: auto;
   transition: opacity 0.25s ease 0.18s;
