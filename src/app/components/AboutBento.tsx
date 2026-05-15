@@ -129,7 +129,7 @@ function BookPanel() {
           Albert Camus
         </p>
       </PerspectiveBook>
-      <a href="https://goodreads.com/barissev" target="_blank" rel="noopener noreferrer" style={{ fontFamily: "var(--display)", fontSize: "12px", fontWeight: 500, letterSpacing: "-0.01em", color: "var(--t2)", marginTop: 10, textDecoration: "none" }}>
+      <a href="https://goodreads.com/barissev" target="_blank" rel="noopener noreferrer" style={{ position: "relative", zIndex: 2, fontFamily: "var(--display)", fontSize: "12px", fontWeight: 500, letterSpacing: "-0.01em", color: "var(--t2)", marginTop: 10, textDecoration: "none" }}>
         See my shelf ↗
       </a>
     </div>
