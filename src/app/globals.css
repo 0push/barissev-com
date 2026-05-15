@@ -782,7 +782,7 @@ nav .wrap {
 .contact-hl em { font-style: italic; }
 
 .contact-links {
-  display: flex; align-items: center; gap: 12px;
+  display: flex; flex-direction: column; align-items: center; gap: 12px;
 }
 .contact-email {
   font-size: 13.5px; font-weight: 400;
