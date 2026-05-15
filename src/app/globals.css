@@ -914,7 +914,7 @@ body.dark .proj::before { background: oklch(96% 0.005 248 / 0.04); }
     margin: 28px 0;
     background: linear-gradient(90deg, transparent, var(--line) 20%, var(--line) 80%, transparent);
   }
-  .hiw-text { margin-top: 20px; }
+  .hiw-text { margin-top: 20px; text-align: center; }
 
   /* About bento — single column */
   .about-bento-grid {
@@ -923,17 +923,19 @@ body.dark .proj::before { background: oklch(96% 0.005 248 / 0.04); }
     height: auto;
     gap: 10px;
   }
-  .about-card--bio       { grid-column: 1; grid-row: auto; }
-  .about-card--location  { grid-column: 1; grid-row: auto; min-height: 320px; }
+  .about-card--bio       { grid-column: 1; grid-row: auto; display: none; }
+  .about-card--location  { grid-column: 1; grid-row: auto; min-height: 340px; }
   .about-card--media     { grid-column: 1; grid-row: auto; min-height: 200px; }
   .about-card--timeline  { grid-column: 1; grid-row: auto; min-height: 220px; }
 
-  /* Globe — bigger, half-clipped at bottom */
+  /* Globe — top half visible, clipped at bottom, header on top */
   .about-globe-stage {
-    bottom: -40%;
-    width: 280%;
+    bottom: auto;
+    top: 10%;
+    width: 300%;
   }
-  .about-location-text { font-size: 14px; }
+  .about-location-text { font-size: 13px; }
+  .about-location-default-header { gap: 10px; }
 
   /* Music/book — smaller on mobile */
   .vinyl-scene { width: 100px !important; }
